@@ -1,1 +1,1 @@
-# Ejercicios-Python
+# Resumenes y ejercicios de distintos lenguajes
