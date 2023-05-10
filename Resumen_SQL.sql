@@ -54,3 +54,62 @@
         END -- AS Category
     FROM Products
     ORDER BY ProductName
+
+    -- JOINS (Para unir las tablas deben contener un campo en común)
+
+    -- Inner Join (Uniones internas) 
+        -- Los datos en común 
+        /*
+            Tablas a utilizar para ver campo en común:
+                SELECT TOP 10 FROM Customers
+                SELECT TOP 10 FROM Orders
+        */
+
+        -- Entre dos tablas
+        SELECT 
+        C.CustomerID
+        , C.Companyname
+        , C.[Address]
+        , C.ContactName
+        , C.City
+        , O.OrderID
+        , O.OrderDate
+        , O.ShippedDate
+        , O.ShippAddress
+        FROM Customers AS C
+        INNER JOIN Orders AS O
+        ON C.CustomerID = O.CustomerID
+
+        -- Entre más tablas
+          SELECT 
+        C.CustomerID
+        , C.Companyname
+        , C.[Address]
+        , C.ContactName
+        , C.City
+        , O.OrderID
+        , O.OrderDate
+        , O.ShippedDate
+        , O.ShippAddress
+        , D.OrderID
+        , D.Quantity
+        , D.UnitePrice
+        , P.ProductID
+        , P.ProductName
+
+        FROM Customers AS C
+
+        INNER JOIN Orders AS O
+        ON C.CustomerID = O.CustomerID
+
+        INNER JOIN [Orders Details] AS D
+        ON O.OrderID = D.OrderID
+
+        INNER JOIN Products AS P 
+        ON D.ProductID = P.ProductID
+
+    -- Outer Join (Uniones externas)
+
+    -- Cross Join (Uniones cruzadas)
+
+    -- Selft Join (Union de tablas con sigo mismas)
