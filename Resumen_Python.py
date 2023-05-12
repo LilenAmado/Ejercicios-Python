@@ -40,4 +40,15 @@ input()
 2 * 2
 2 / 2
 2 ** 2
+8//3 
 """
+
+print(8//3) #Corta el punto y se queda con el numero entero "Redondea para abajo"
+print(round(8/3)) #Redondea, y en .5 redondea para abajo
+
+#f-String: Esta bueno cuando utilizas varios tipos juntos. 
+score = 0
+height = 1.5
+isWinning = True
+
+print(f"Your score is {score}. Your height is {height}. You are winning is {isWinning}.")
