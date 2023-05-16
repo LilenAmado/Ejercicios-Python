@@ -1,0 +1,23 @@
+Create React App (CRA)
+
+1) cmd (node -v)
+2) Instalar node.js (https://nodejs.org/)
+3) Equipo > Propiedades > Configuración avanzada del sistema > Variables de entorno > Nueva > Escribir NodeJS > Poner la ruta donde se encuentra (C:\Program File\nodejs)
+4) Crear la carpeta donde quiero tener el proyecto
+5) En la terminal: npm install -g create-react-app
+6) npx create-react-app nombre_del_proyecto
+7) ls (listar carpetas) 
+8) cd nombre_de_la_carpeta (entrar)
+9) npm start 
+
+VITE (React)
+
+1) npm init vite@latest
+2) Y
+3) Escribir el nombre de la app
+4) Seleccionar React
+5) Javascript
+6) ls (listar carpetas) 
+7) cd nombre_de_la_carpeta (entrar)
+8) npm i
+9) npm run dev
