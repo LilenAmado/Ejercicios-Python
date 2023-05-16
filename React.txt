@@ -22,3 +22,4 @@ VITE (React)
 8) npm i
 9) npm run dev
 10) Borrar todo lo de src y quedarnos unicamente con main.jsx
+ESLINT y PRETTIER en REACT https://www.youtube.com/watch?v=3BHXuZvI4FI&list=PL3aEngjGbYhkg3AR-cytsvQIIGp1JgrY_&index=4
