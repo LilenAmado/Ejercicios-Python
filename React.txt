@@ -21,3 +21,4 @@ VITE (React)
 7) cd nombre_de_la_carpeta (entrar)
 8) npm i
 9) npm run dev
+10) Borrar todo lo de src y quedarnos unicamente con main.jsx
