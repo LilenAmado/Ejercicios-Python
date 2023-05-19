@@ -52,3 +52,14 @@ height = 1.5
 isWinning = True
 
 print(f"Your score is {score}. Your height is {height}. You are winning is {isWinning}.")
+
+#Condiciones
+"""
+if condition1: 
+    do this
+elif condition2:
+    do this
+else: 
+    do this
+
+"""
