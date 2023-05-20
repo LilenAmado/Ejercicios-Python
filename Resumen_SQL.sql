@@ -55,6 +55,22 @@
     FROM Products
     ORDER BY ProductName
 
+    -- COUNT: Devuelve el número de filas que coinciden con la condición especifica de la consulta. 
+    
+    SELECT count(first_name) FROM customers
+	
+	SELECT 
+        first_name, 
+        COUNT(first_name) as "num names"
+	FROM customer
+	GROUP BY first_name
+
+    SELECT DISTINCT 
+        rating as "Clasificación"
+        , count(title) as "Cant. Películas"
+    FROM Film
+    Group by rating -- Se usa el group by para agrupar por el conteo
+
     -- JOINS (Para unir las tablas deben contener un campo en común)
 
     -- Inner Join (Uniones internas) 
