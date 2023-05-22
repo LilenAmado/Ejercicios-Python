@@ -65,7 +65,7 @@ AND - OR - NOT
     FROM Products
     ORDER BY ProductName
 
--- COUNT: Devuelve el número de filas que coinciden con la condición especifica de la consulta. 
+-- COUNT: Devuelve el número de filas que coinciden con la condición especifica de la consulta. Devuelve el numero de filas totales dependiendo la condición. Función agregada.
     
     SELECT count(first_name) FROM customers
 	
@@ -138,6 +138,41 @@ AND - OR - NOT
     SELECT first_name
     FROM customer
     WHERE first_name ILIKE '%er%'
+
+-- GROUP BY:
+    SELECT 
+        amount
+        , COUNT(amount) 
+    FROM payment
+    WHERE amount IN (0.99, 1.98, 1.99)
+    GROUP BY amount
+    
+-- HAVING: 
+
+-- Funciones agregadas: Tomar multiples entradas y devolver una sola salida.
+-- AVG(): Devuelve el valor promedio. Devuelve float.
+
+    SELECT AVG(replacement_cost) 
+    FROM film
+
+-- MAX(): Devuelve el valor máximo.
+
+    SELECT MAX(replacement_cost) 
+    FROM film
+
+-- MIN(): Devuelve el valor mínimo.
+
+    SELECT MIN(replacement_cost) 
+    FROM film
+
+-- SUM(): Devuelve la sumatoria total. 
+
+    SELECT SUM(replacement_cost) 
+    FROM film
+
+-- ROUND(): Redondear decimales.
+    SELECT ROUND(AVG(replacement_cost), 2)
+    FROM film
 
 -- JOINS (Para unir las tablas deben contener un campo en común)
 
