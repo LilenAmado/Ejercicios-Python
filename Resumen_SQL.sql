@@ -107,6 +107,38 @@ AND - OR - NOT
     SELECT TOP 10 first_name 
     FROM customer
 
+-- BETWEEN: Un operador para unir entre un rango de valores (NOT BETWEEN)
+    SELECT * 
+    FROM payment
+    WHERE amount BETWEEN 7 and 9
+
+    SELECT * 
+    FROM payment
+    WHERE payment_date BETWEEN '2007-02-01' AND '2007-02-15'
+    ORDER BY amount ASC
+
+-- IN: Condición que verifica si el valor esta incluido en una lista de varios valores (NOT IN)
+
+    SELECT 
+        amount
+        , COUNT(amount) 
+    FROM payment
+    WHERE amount IN (0.99, 1.98, 1.99)
+    GROUP BY amount
+
+-- LIKE: distingue minusculas y mayusculas - ILIKE: No distingue, toma todas. (Todos los caracteres que le sigan: % Un solo caracter: _)
+    SELECT first_name
+    FROM customer
+    WHERE first_name LIKE 'J%'
+
+    SELECT first_name
+    FROM customer
+    WHERE first_name LIKE '_her%'
+
+    SELECT first_name
+    FROM customer
+    WHERE first_name ILIKE '%er%'
+
 -- JOINS (Para unir las tablas deben contener un campo en común)
 
 -- Inner Join (Uniones internas) Los datos en común.

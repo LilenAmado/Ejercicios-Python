@@ -83,3 +83,44 @@ LIMIT 5
 SELECT count(title) as Num_movies
 FROM film
 WHERE length <= 50
+
+-- Challenge:
+-- How many payment transactions were greater than $5.00? 
+
+SELECT COUNT(*)
+FROM payment
+WHERE amount > 5.00
+
+-- Challenge:
+-- How many actors have a first name that starts with the letter P?
+
+SELECT COUNT(first_name)
+FROM actor
+WHERE first_name ILIKE 'P%'
+
+-- Challenge:
+-- How many unique districts are out customers from?
+
+SELECT COUNT(DISTINCT(district)) 
+FROM address
+
+-- Challenge:
+-- Retrieve the list of names for those distinct districts from the previous question. 
+
+SELECT DISTINCT district
+FROM address
+
+-- Challenge:
+-- How many films have a rating of R and a replacement cost between $5 and $15? 
+
+SELECT COUNT(title) 
+FROM film
+WHERE rating = 'R' 
+AND rental_rate BETWEEN 5 AND 15
+
+-- Challenge:
+-- How many films have the word Truman somewhere in the title?
+
+SELECT COUNT(title)
+FROM film
+WHERE title ILIKE '%Truman%'
