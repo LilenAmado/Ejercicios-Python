@@ -141,13 +141,34 @@ AND - OR - NOT
 
 -- GROUP BY:
     SELECT 
-        amount
-        , COUNT(amount) 
+        company
+        , division
+        , SUM(sales) 
+    FROM finance
+    WHERE division IN ('Marketing')
+    GROUP BY company, division
+    ORDER BY SUM(sales)
+
+    SELECT 
+        DATE(payment_date)
+        , SUM(amount)
     FROM payment
-    WHERE amount IN (0.99, 1.98, 1.99)
-    GROUP BY amount
+    GROUP BY DATE(payment_date)
+    ORDER BY SUM(amount) DESC
     
--- HAVING: 
+-- HAVING: Permite filtrar luego del group by, por ejemplo la función agregada
+
+    SELECT company, SUM(sales)
+    FROM finance
+    WHERE company != 'Google'
+    GROUP BY company
+    HAVING SUM(sales) > 1000
+
+    SELECT store_id, COUNT(*)
+    FROM customer
+    GROUP BY store_id
+    HAVING COUNT(*) > 300 
+
 
 -- Funciones agregadas: Tomar multiples entradas y devolver una sola salida.
 -- AVG(): Devuelve el valor promedio. Devuelve float.
@@ -173,6 +194,11 @@ AND - OR - NOT
 -- ROUND(): Redondear decimales.
     SELECT ROUND(AVG(replacement_cost), 2)
     FROM film
+
+-- DATE(): Convierte fecha/hora en fecha
+
+    SELECT DATE(payment_date)
+    FROM payment
 
 -- JOINS (Para unir las tablas deben contener un campo en común)
 
