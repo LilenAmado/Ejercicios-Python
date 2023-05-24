@@ -28,10 +28,10 @@ float()
 bool()
 """
 
-#Entrada de usuario
+#Entrada de usuario: En string
 """
 input() 
-"""         # En string
+""" 
 
 #Operadores
 """

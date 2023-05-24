@@ -124,3 +124,85 @@ AND rental_rate BETWEEN 5 AND 15
 SELECT COUNT(title)
 FROM film
 WHERE title ILIKE '%Truman%'
+
+-- CHALLENGE
+-- We have two staff members, with Staff IDs 1 and 2.
+-- We want to give a bonus to the staff member that handled the most payments.
+-- (Most in terms of number of payments processed, not total dollar amoumt).
+-- How many payments did each staf member handle and who gets the bonus?
+
+SELECT staff_id, COUNT(amount) 
+FROM payment 
+GROUP BY staff_id 
+
+-- CHALLENGE
+-- Corporate HQ is conducting a study on the relationship between replacement cost and a movie MPAA rating (e.g. G, PG, R, etc)
+-- What is the averange replacement cost per MPAA rating?
+-- Note: You may need to expand the AVG column to view correct results
+
+SELECT 
+	rating, 
+	ROUND(
+		AVG(replacement_cost), 2
+	)
+FROM film 
+GROUP BY rating
+
+-- CHALLENGE
+-- We are running a promotion to reward our top 5 customers with coupons.
+-- What are the customer ids of the top 5 customers by total spend? 
+select * from payment
+
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+limit 5
+
+-- CHALLENGE
+-- We are launching a platinum service for our most loyal customers. We will assign platinum status to customers that have had 40 or more transaction payments.
+-- What customer_ids are eligible for platinum status?
+
+SELECT customer_id, COUNT(amount)
+FROM payment 
+GROUP BY customer_id
+HAVING COUNT(amount) >= 40
+
+-- CHALLENGE
+-- What are the customer ids of customers who have spent more than $100 in payment transactions with our staff_id member 2?
+
+SELECT customer_id, SUM(amount) 
+FROM payment 
+WHERE staff_id = 2
+GROUP BY customer_id
+HAVING SUM(amount) > 100
+
+-- ASSESSMENT TEST 1
+-- COMPLETE THE FOLLOWING TASKS!
+
+-- 1. Return the customer IDs of customers who have spent at least $110 with the staff member who has an ID of 2.
+-- The answer should be customers 187 and 148.
+
+SELECT 
+	customer_id
+	--, SUM(amount) 
+FROM payment
+WHERE staff_id = 2
+GROUP BY customer_id
+HAVING SUM(amount) >= 110
+
+-- 2. How many films begin with the letter J?
+-- The answer should be 20.
+SELECT count(title)
+FROM film
+WHERE title LIKE 'J%'
+
+-- 3. What customer has the highest customer ID number whose name starts with an 'E' and has an address ID lower than 500?
+-- The answer is Eddie Tomlin
+SELECT 
+	first_name,last_name 
+FROM customer
+WHERE first_name LIKE 'E%'
+AND address_id < 500
+ORDER BY customer_id DESC
+LIMIT 1
