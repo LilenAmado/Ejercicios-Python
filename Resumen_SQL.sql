@@ -253,6 +253,24 @@ AND - OR - NOT
         INNER JOIN Products AS P 
         ON D.ProductID = P.ProductID
 
+-- Full outer Joins
+
+    SELECT * 
+    FROM customer
+    FULL OUTER JOIN payment
+    ON customer.customer_id = payment.customer_id
+
+    WHERE customer.customer_id IS null 
+    OR payment.payment_id IS null
+
+-- Left outer Joins
+
+-- Right outer Joins
+
+-- Union
+
+
+
 -- Outer Join (Uniones externas)
 
 -- Cross Join (Uniones cruzadas)
