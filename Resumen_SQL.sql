@@ -253,7 +253,7 @@ AND - OR - NOT
         INNER JOIN Products AS P 
         ON D.ProductID = P.ProductID
 
--- Full outer Joins
+-- Full outer Joins (Ambas tablas enteras tengan o no datos en común)
 
     SELECT * 
     FROM customer
@@ -263,13 +263,27 @@ AND - OR - NOT
     WHERE customer.customer_id IS null 
     OR payment.payment_id IS null
 
--- Left outer Joins
+-- Left Joins: Toda la tabla izq más lo común con tabla derecha. 
 
--- Right outer Joins
+    SELECT * 
+    FROM registrations
+    LEFT JOIN logins
+    ON registrations.name = logins.name
 
--- Union
+    WHERE logins.log_id IS null  
 
+-- Right Joins: Toda la tabla derecha más lo común con tabla izq. 
 
+    SELECT * 
+    FROM tabla_A
+    RIGHT JOIN tabla_B
+    ON tabla_A.columna_comun = tabla_B.columna_comun
+
+-- Union: Combina el conjunto de resultados de dos o más sentencias SELECT. Una tabla arriba de la otra.
+
+    SELECT * FROM tabla_A
+    UNION 
+    SELECT * FROM tabla_B
 
 -- Outer Join (Uniones externas)
 

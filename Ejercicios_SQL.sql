@@ -206,3 +206,33 @@ WHERE first_name LIKE 'E%'
 AND address_id < 500
 ORDER BY customer_id DESC
 LIMIT 1
+
+-- CHALLENGE:
+-- California sales tax laws have changed and we need to alert our customers to this through email.
+-- What are the emails of the customers who live in California? 
+
+SELECT 
+c.first_name
+, c.last_name
+, c.email 
+, a.district
+FROM customer AS c
+INNER JOIN address AS a
+ON c.address_id = a.address_id
+WHERE a.district = 'California'
+
+-- CHALLENGE:
+-- A customer walks in and is a huge fan of the actor 'Nick Wahlberg' and wants to know which movies he is in.
+-- Get a list of all the movies 'Nick Wahlberg' has been in. 
+
+SELECT 
+	A.first_name
+	, A.last_name
+	, F.title
+FROM actor AS A 
+INNER JOIN film_actor AS FA
+ON A.actor_id = FA.actor_id
+INNER JOIN film AS F
+ON FA.film_id = F.film_id
+WHERE A.first_name = 'Nick' 
+AND A.last_name = 'Wahlberg'
