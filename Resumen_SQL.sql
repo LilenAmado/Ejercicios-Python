@@ -290,3 +290,60 @@ AND - OR - NOT
 -- Cross Join (Uniones cruzadas)
 
 -- Selft Join (Union de tablas con sigo mismas)
+
+
+
+
+-- Funciones de tiempo
+'''
+SHOW ALL 
+SHOW TIMEZONE
+'''
+
+-- TIME: Contiene solo hora
+
+-- DATE: Contiene solo fecha
+
+-- TIMESTAMP: Contiene fecha y hora
+
+-- TIMESTAMPTZ: Contiene fecha, hora, timezone
+
+-- TIMEZONE:
+
+-- NOW:
+
+    SELECT NOW()
+
+-- TIMEOFDAY:
+
+    SELECT TIMEOFDAY() -- Te da con formato string
+
+-- CURRENT_TIME:
+
+    SELECT CURRENT_TIME()
+
+-- CURRENT_DATE:
+
+    SELECT CURRENT_DATE()
+
+-- EXTRACT(): YEAR - MONTH - DAY - WEEK - QUARTER
+
+    EXTRACT(YEAR FROM date_columna)
+
+    SELECT EXTRACT(YEAR FROM payment_date)
+    FROM payment
+
+-- AGE():
+
+    AGE(date_columna) -- la edad / antigüedad
+
+    SELECT AGE(payment_date)
+    FROM payment
+
+-- TO_CHAR(): Convertir tipo de date a text -- Buscar formatos en internet dependiendo de lo que necesite 
+-- https://www.postgresql.org/docs/12/functions-formatting.html
+
+    TO_CHAR(date_columna, 'mm-dd-yyyy')
+
+    SELECT TO_CHAR(payment_date, 'dd/MM/YYYY')
+    FROM payment
