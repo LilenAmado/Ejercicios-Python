@@ -1,4 +1,5 @@
 -- Esquema, una división lógica de la base de datos para organizar los objetos. 
+-- https://www.postgresql.org/docs/12/functions.html
 """
 =
 <
@@ -347,3 +348,34 @@ SHOW TIMEZONE
 
     SELECT TO_CHAR(payment_date, 'dd/MM/YYYY')
     FROM payment
+
+-- Funciones matemáticas: https://www.postgresql.org/docs/12/functions-math.html
+
+    SELECT 
+        ROUND(
+            rental_rate / replacement_cost,
+            4
+        ) * 100
+    FROM film
+
+-- Funciones String https://www.postgresql.org/docs/12/functions-string.html
+
+-- LENGTH():
+
+    SELECT LENGTH(first_name) 
+    FROM customer
+
+-- CONCATENAR:
+
+    SELECT first_name || ' ' || last_name
+    FROM customer
+
+-- UPPER: Mayúsculas
+
+    SELECT UPPER(first_name) 
+    FROM customer
+
+-- LEFT: 
+    
+    SELECT LEFT(first_name, 1) 
+    FROM customer
