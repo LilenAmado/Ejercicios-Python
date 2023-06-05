@@ -290,7 +290,19 @@ AND - OR - NOT
 
 -- Cross Join (Uniones cruzadas)
 
--- Selft Join (Union de tablas con sigo mismas)
+-- Selft Join (Union de tablas con sigo mismas): Utiles para comparar valores y columnas dentro de una misma tabla
+
+    SELECT 
+        f1.film_id, 
+        f1.title, 
+        f2.film_id, 
+        f2.title, 
+        f1.length
+    FROM film AS f1
+    INNER JOIN film AS f2
+    ON f1.film_id != f2.film_id
+    AND f1.length = f2.length
+    WHERE f1.length = 117
 
 -- Subconsultas/Subquery:
 
