@@ -259,3 +259,66 @@ WHERE TO_CHAR(payment_date, 'Day') like '%Monday%'
 SELECT COUNT(*)
 FROM payment
 WHERE EXTRACT(dow FROM payment_date) = 1
+
+-- CHALLENGE:
+--  1. How can you retrieve all the information from the cd.facilities table?
+
+SELECT * 
+FROM cd.facilities
+
+-- 2. You want to print out a list of all of the facilities and their cost to members. How would you retrieve a list of only facility names and costs?
+
+SELECT 
+	name
+	, membercost
+FROM cd.facilities
+
+-- 3. How can you produce a list of facilities that charge a fee to members?
+-- Expected Results should have just 5 rows:
+
+SELECT *
+FROM cd.facilities
+WHERE membercost > 0
+
+-- 4. How can you produce a list of facilities that charge a fee to members, and that fee is less than 1/50th of the monthly maintenance cost? Return the facid, facility name, member cost, and monthly maintenance of the facilities in question.
+-- ● Result is just two rows:
+
+SELECT 
+	facid
+	, name
+	, membercost
+	, monthlymaintenance
+FROM cd.facilities
+WHERE membercost > 0 
+AND membercost < (monthlymaintenance / 50)
+
+-- 5. How can you produce a list of all facilities with the word 'Tennis' in their name?
+
+SELECT * 
+FROM cd.facilities
+WHERE name ILIKE '%Tennis%'
+
+-- 6. How can you retrieve the details of facilities with ID 1 and 5? Try to do it without using the OR operator.
+
+SELECT *
+FROM cd.facilities
+WHERE facid IN (1, 5)
+
+-- 7. How can you produce a list of members who joined after the start of September 2012? Return the memid, surname, firstname, and joindate of the members in question.
+-- ● Expected Result is 10 rows (not all are shown below)
+
+SELECT 
+	memid
+	, surname
+	, firstname
+	, DATE(joindate) AS JoinDate
+FROM cd.members
+WHERE joindate > '2012-09-01'
+
+-- 8. How can you produce an ordered list of the first 10 surnames in the members table? The list must not contain duplicates.
+-- ● Expected Result should be 10 rows if you include GUEST as a last name
+
+SELECT DISTINCT surname
+FROM cd.members
+ORDER BY surname ASC
+LIMIT 10
