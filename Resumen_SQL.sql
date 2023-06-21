@@ -1,5 +1,6 @@
 -- Esquema, una división lógica de la base de datos para organizar los objetos. 
 -- https://www.postgresql.org/docs/12/functions.html
+-- Type: https://www.postgresql.org/docs/current/datatype.html
 """
 =
 <
@@ -434,3 +435,11 @@ SHOW TIMEZONE
     
     SELECT LEFT(first_name, 1) 
     FROM customer
+
+-- Constraints: Restricciones
+NOT NULL
+UNIQUE(Column_list)
+PRIMARY KEY(Column_list)
+FOREIGN KEY(Column_list)
+CHECK
+EXCLUSION 
