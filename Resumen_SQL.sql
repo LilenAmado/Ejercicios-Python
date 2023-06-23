@@ -443,3 +443,86 @@ PRIMARY KEY(Column_list)
 FOREIGN KEY(Column_list)
 CHECK
 EXCLUSION 
+
+-- CREATE TABLE
+    CREATE TABLE nombre_tabla(
+
+        nombre_columna TIPO restricciones_que_tendra_la_columna,
+        nombre_columna TIPO restricciones_que_tendra_la_columna,
+
+        restricciones_que_tendra_la_tabla 
+        restricciones_que_tendra_la_tabla
+
+    ) INHERITS nombre_de_tabla_existente -- si tiene algun tipo de relación con otra tabla y pueda heredarla de una tabla existente.
+
+    -- Sintaxis simple 
+        CREATE TABLE nombre_tabla(
+
+            nombre_columna TIPO restricciones_que_tendra_la_columna,
+            nombre_columna TIPO restricciones_que_tendra_la_columna
+
+        )
+
+        CREATE TABLE players(
+            player_id SERIAL PRIMARY KEY,
+            age SMALLINT NOT NULL,
+        )
+
+    -- Tipo de datos SERIAL (para PK) para que sea clave única (ver tipo de SERIAL que existen en img)
+
+    -- Pequeño ejemplo de Modelado de datos
+        CREATE TABLE account(
+            user_id SERIAL PRIMARY KEY,
+            user_name VARCHAR(50) UNIQUE NOT NULL,
+            password VARCHAR(50) NOT NULL,
+            email VARCHAR(255) UNIQUE NOT NULL,
+            created_on TIMESTAMP NOT NULL,
+            last_login TIMESTAMP
+        )
+
+        CREATE TABLE job(
+            job_id SERIAL PRIMARY KEY,
+            job_name VARCHAR(255) UNIQUE NOT NULL
+        )
+
+        CREATE TABLE account_job(
+            user_id INTEGER REFERENCES account(user_id),
+            job_id INTEGER REFERENCES job(job_id),
+            hire_Date TIMESTAMP
+        )
+
+-- INSERT
+    INSERT INTO account(user_name, password, email, created_on)
+    VALUES
+    ('Jose', 'password', 'jose@email.com', CURRENT_TIMESTAMP)
+
+    INSERT INTO job(job_name)
+    VALUES
+    ('Astronaut')
+
+    INSERT INTO job(job_name)
+    VALUES
+    ('President')
+
+    INSERT INTO account_job(user_id, job_id, hire_date)
+    VALUES (1, 1, CURRENT_TIMESTAMP)
+
+-- UPDATE
+    UPDATE account
+    SET last_login = CURRENT_TIMESTAMP
+    WHERE last_login IS NULL
+
+    UPDATE account
+    SET last_login = created_on
+    WHERE user_name = 'Jose'
+
+    -- Sintaxis de update (actualización) basada en otra tabla
+    UPDATE account_job
+    SET hire_date = account.created_on
+    FROM account
+    WHERE account_job.user_id = account.user_id
+
+    UPDATE account
+    SET last_login = CURRENT_TIMESTAMP
+    WHERE user_id = 1
+    RETURNING email, created_on, last_login

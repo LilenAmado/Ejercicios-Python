@@ -322,3 +322,34 @@ SELECT DISTINCT surname
 FROM cd.members
 ORDER BY surname ASC
 LIMIT 10
+
+-- 9. You'd like to get the signup date of your last member. How can you retrieve this information?
+-- ● Expected Result
+-- ● 2012-09-26 18:08:45
+
+SELECT MAX(joindate) AS latest_signup 
+FROM cd.members
+----
+SELECT joindate AS latest_signup
+FROM cd.members
+ORDER BY joindate DESC
+LIMIT 1 
+
+-- 10. Produce a count of the number of facilities that have a cost to guests of 10 or more.
+-- ● Expected Result
+-- ● 6
+SELECT COUNT(*) 
+FROM cd.facilities
+WHERE guestcost >= 10
+
+-- 11. Produce a list of the total number of slots booked per facility in the month of September 2012. Produce an output table consisting of facility id and slots, sorted by the number of slots.
+-- ● Expected Result is 9 rows
+
+SELECT 
+	facid
+	, SUM(slots) AS Total_Slots
+FROM cd.bookings
+WHERE starttime >= '2012-09-01' 
+AND starttime <= '2012-09-30' 
+GROUP BY facid
+ORDER BY Total_Slots
