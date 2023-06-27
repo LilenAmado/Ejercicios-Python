@@ -554,6 +554,7 @@ EXCLUSION
         RETURNING job_id, job_name
 
 -- ALTER (alterar/modificar)
+-- https://www.postgresql.org/docs/current/sql-altertable.html
     """
     Permite cambios en una estructura de tabla existente, como:
     - Agregar, eliminar o renombrar columnas
@@ -579,3 +580,55 @@ EXCLUSION
     / SET NOT NULL 
     / DROP NOT NULL
     / ADD CONSTRAINT contraint_name 
+
+    -- Ejemplo
+        CREATE TABLE INFORMATION(
+        info_id SERIAL PRIMARY KEY,
+        title VARCHAR(500) NOT NULL,
+        person VARCHAR(50) NOT NULL UNIQUE
+        )
+
+        SELECT * FROM INFORMATION
+
+        ALTER TABLE INFORMATION
+        RENAME TO new_info -- Renombrar la tabla
+
+        SELECT * FROM new_info
+
+        ALTER TABLE new_info 
+        RENAME COLUMN person TO people -- Renombrar la columna
+
+        ALTER TABLE new_info 
+        ALTER COLUMN people DROP NOT NULL -- Sacar NOT NULL / SET poner
+
+        INSERT INTO new_info(title)
+        VALUES ('Some new title')
+
+-- DROP
+
+    ALTER TABLE nombre_tabla
+    DROP COLUMN nombre_columna
+
+    -- Remove all dependencies 
+    
+    ALTER TABLE nombre_tabla
+    DROP COLUMN nombre_columna CASCADE
+
+    -- Por si no sabes si existe la columna y evitar el error
+    
+    ALTER TABLE nombre_tabla
+    DROP COLUMN IF EXISTS nombre_columna
+
+    -- Multiples columnas 
+    ALTER TABLE nombre_tabla
+    DROP COLUMN nombre_columna_1,
+    DROP COLUMN nombre_columna_2
+
+    -- Ejemplo:
+        ALTER TABLE new_info
+        DROP COLUMN people
+
+        select * from new_info
+
+        ALTER TABLE new_info
+        ADD COLUMN people VARCHAR(50)
