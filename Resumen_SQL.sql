@@ -517,12 +517,38 @@ EXCLUSION
     WHERE user_name = 'Jose'
 
     -- Sintaxis de update (actualización) basada en otra tabla
-    UPDATE account_job
-    SET hire_date = account.created_on
-    FROM account
-    WHERE account_job.user_id = account.user_id
+        UPDATE account_job
+        SET hire_date = account.created_on
+        FROM account
+        WHERE account_job.user_id = account.user_id
 
-    UPDATE account
-    SET last_login = CURRENT_TIMESTAMP
-    WHERE user_id = 1
-    RETURNING email, created_on, last_login
+        UPDATE account
+        SET last_login = CURRENT_TIMESTAMP
+        WHERE user_id = 1
+        RETURNING email, created_on, last_login
+
+-- DELETE
+
+    -- Borrar toda la tabla
+        DELETE FROM Tabla
+
+    -- Borrar con filtro
+        DELETE FROM Tabla 
+        WHERE row_id = 1
+
+    -- Borrar basado en la presencia de otras tablas
+        DELETE FROM tabla_A
+        USING tabla_B
+        WHERE tabla_A.id = tabla_B.id
+
+
+    -- Ejemplo de insert y delete
+        
+        INSERT INTO job(job_name)
+        VALUES('Cowboy')
+
+        SELECT * FROM job
+
+        DELETE FROM job
+        WHERE job_name = 'Cowboy'
+        RETURNING job_id, job_name
