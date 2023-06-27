@@ -552,3 +552,30 @@ EXCLUSION
         DELETE FROM job
         WHERE job_name = 'Cowboy'
         RETURNING job_id, job_name
+
+-- ALTER (alterar/modificar)
+    """
+    Permite cambios en una estructura de tabla existente, como:
+    - Agregar, eliminar o renombrar columnas
+    - Cambiar el tipo de datos de una columna
+    - Establecer valores PREDETERMINADOS para una columna
+    - Agregar restricciones CHECK
+    - Cambiar el nombre de la tabla
+    """
+
+    -- Adicionar columna
+    ALTER TABLE nombre_tabla 
+    ADD COLUMN nueva_columna TYPE
+
+    -- Sacar columna
+    ALTER TABLE nombre_tabla 
+    DROP COLUMN nombre_columna TYPE 
+
+    -- Alter Contraints (restricción)
+    ALTER TABLE nombre_tabla
+    ALTER COLUMN nombre_columna
+    SET DEFAULT value
+    / DROP DEFAULT
+    / SET NOT NULL 
+    / DROP NOT NULL
+    / ADD CONSTRAINT contraint_name 
