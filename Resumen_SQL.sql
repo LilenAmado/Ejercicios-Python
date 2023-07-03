@@ -632,3 +632,53 @@ EXCLUSION
 
         ALTER TABLE new_info
         ADD COLUMN people VARCHAR(50)
+
+-- CHECK Constraint
+    CREATE TABLE employees(
+        emp_id SERIAL PRIMARY KEY,
+        first_name VARCHAR(50) NOT NULL,
+        last_name VARCHAR(50) NOT NULL,
+        birthday DATE CHECK(birthdate > '1900-01-01'),
+        hire_date DATE CHECK(hire_date > birthdate),
+        salary INTEGER CHECK(salary > 0)
+    )
+
+-- CASE (condicional IF/ELSE)
+    SELECT 
+        customer_id, 
+        CASE 
+            WHEN (customer_id <= 100) THEN 'Premium'
+            WHEN (customer_id BETWEEN 100 AND 200) THEN 'Plus'
+            ELSE 'Normal'
+        END AS customer_class
+    FROM customer
+
+    SELECT 
+        customer_id, 
+        CASE 
+            WHEN 2 THEN 'Winner'
+            WHEN 5 THEN 'Second place'
+            ELSE 'Normal'
+        END AS Raffle_results
+    FROM customer
+
+    SELECT 
+        SUM(
+            CASE rental_rate
+                WHEN 0.99 THEN 1
+                ELSE 0
+            ELSE 
+        ) AS number_of_bargains,
+        SUM(
+            CASE rental_rate
+                WHEN 2.99 THEN 1
+                ELSE 0
+            ELSE 
+        ) AS regular,
+        SUM(
+            CASE rental_rate
+                WHEN 4.99 THEN 1
+                ELSE 0
+            ELSE 
+        ) AS premium
+    FROM film
