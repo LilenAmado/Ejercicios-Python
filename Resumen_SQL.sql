@@ -682,3 +682,10 @@ EXCLUSION
             ELSE 
         ) AS premium
     FROM film
+
+-- COALESCE
+-- CAST 
+-- NULLIF
+-- VIEWS
+-- IMPORT AND EXPORT
+-- Python
