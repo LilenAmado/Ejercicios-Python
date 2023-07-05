@@ -683,8 +683,32 @@ EXCLUSION
         ) AS premium
     FROM film
 
--- COALESCE
--- CAST 
+-- COALESCE: Devuelve el primer argumento que no sea nulo
+    -- COALESCE(arg_1, arg_2, arg_n,...)
+    
+    SELECT COALESCE(1, 2) -- 1
+    SELECT COALESCE(NULL, 2, 3) -- 2
+
+    -- Ejemplo
+    SELECT 
+        item, 
+        (
+            price - 
+            COALESCE(Discount, 0)
+        ) AS final
+    FROM table
+
+    SELECT COALESCE(descuento, 0) -- Usar como remplazo de null, cuando no encuentra valor a descuento, le pone 0. 
+    
+-- CAST
+    SELECT CAST('5' AS INTEGER)
+    SELECT '5'::INTEGER
+
+    SELECT CAST(date AS TIMESTAMP)
+    FROM table
+
+    SELECT CAST()
+
 -- NULLIF
 -- VIEWS
 -- IMPORT AND EXPORT
