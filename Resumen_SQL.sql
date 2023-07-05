@@ -707,7 +707,11 @@ EXCLUSION
     SELECT CAST(date AS TIMESTAMP)
     FROM table
 
-    SELECT CAST()
+    SELECT 
+        CHAR_LENGTH(
+            CAST(inventory_id AS VARCHAR)
+        )
+    FROM rental
 
 -- NULLIF
 -- VIEWS

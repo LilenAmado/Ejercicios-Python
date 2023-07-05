@@ -353,3 +353,26 @@ WHERE starttime >= '2012-09-01'
 AND starttime <= '2012-09-30' 
 GROUP BY facid
 ORDER BY Total_Slots
+
+---------------
+CREATE TABLE department(
+	name_id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	department VARCHAR(10) NOT NULL
+)
+
+INSERT INTO department(name, department)
+VALUES
+('Lauren', 'A')
+
+INSERT INTO department(name, department)
+VALUES
+('Vinton', 'A')
+
+INSERT INTO department(name, department)
+VALUES
+('Claire', 'B')
+
+SELECT * FROM department
+
+-------------------
