@@ -355,6 +355,7 @@ GROUP BY facid
 ORDER BY Total_Slots
 
 ---------------
+
 CREATE TABLE department(
 	name_id SERIAL PRIMARY KEY,
 	name VARCHAR(50) NOT NULL,
@@ -364,15 +365,13 @@ CREATE TABLE department(
 INSERT INTO department(name, department)
 VALUES
 ('Lauren', 'A')
-
-INSERT INTO department(name, department)
-VALUES
 ('Vinton', 'A')
-
-INSERT INTO department(name, department)
-VALUES
 ('Claire', 'B')
 
-SELECT * FROM department
+SELECT(
+	SUM(CASE WHEN department = 'A' THEN 1 ELSE 0 END) / 
+	SUM(CASE WHEN department = 'B' THEN 1 ELSE 0 END) 
+) AS department_ratio
+FROM department
 
 -------------------
