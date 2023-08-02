@@ -17,3 +17,7 @@ Recursive
 cp A-folder/ A2-folder (si no deja creo que puede deverse a la cant de archivos dentro) 
 Hacer:
 cp -R A-folder/ A2-folder (ahi crea carpeta nueva con los archivos de adentro que tenia la otra carpeta) 
+
+Redirect: >
+echo "Hola" > NuevoTexto.txt
+cat NuevoTexto.txt
