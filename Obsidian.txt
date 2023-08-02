@@ -21,3 +21,4 @@ cp -R A-folder/ A2-folder (ahi crea carpeta nueva con los archivos de adentro qu
 Redirect: >
 echo "Hola" > NuevoTexto.txt
 cat NuevoTexto.txt
+echo "Como estas?" >> NuevoTexto.txt
