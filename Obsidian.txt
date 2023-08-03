@@ -22,3 +22,17 @@ Redirect: >
 echo "Hola" > NuevoTexto.txt
 cat NuevoTexto.txt
 echo "Como estas?" >> NuevoTexto.txt
+
+Pipe
+
+tail -4 b.txt
+ls A-folder/ | tail -3
+ls A-folder/ | less
+ls A-folder/ | tail -3 | less
+ls A-folder/ | tail -3 | sort 
+ls A-folder/ | tail -3 | sort > myfile.txt
+
+Find: Buscar
+
+find .
+Ctrl + C (parar la terminal)
