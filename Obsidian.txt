@@ -36,3 +36,7 @@ Find: Buscar
 
 find .
 Ctrl + C (parar la terminal)
+
+find newfolder/ -name aaa.txt
+
+find newfolder/ -type file
