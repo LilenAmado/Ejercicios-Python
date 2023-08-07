@@ -34,9 +34,50 @@ ls A-folder/ | tail -3 | sort > myfile.txt
 
 Find: Buscar
 
-find .
-Ctrl + C (parar la terminal)
+  find .
+  Ctrl + C (parar la terminal)
+  
+  find newfolder/ -name aaa.txt
+  
+  find newfolder/ -type file
 
-find newfolder/ -name aaa.txt
+GREP: Buscar texto, patrones
 
-find newfolder/ -type file
+grep pedro nombre.txt
+grep so b.txt
+grep So b.txt
+grep -i so b.txt
+grep s b.txt
+ls | grep t
+ls | grep -v t 
+
+AWK (cuando es una tabla)
+
+  awk '{print} text1.txt  -- Trae todo 
+  awk '{print $1} text1.txt -- Trae primera columna
+  awk '{print $1, $2} text1.txt
+  awk '{print $NF} text1.txt -- Ultima columna
+  awk '{print $(NF -1)} text1.txt -- Anteultima columna
+  awk 'NR==2 {print $0} text1.txt -- Si quiero la primera fila   -- 2 porque la primera son los encabezados
+  awk 'NR==2, NR==5 {print $0} text1.txt -- Si quiero todo entre 2 a 5 
+  awk 'NR==2; NR==5 {print $0} text1.txt -- Si quiero 2 y 5 
+  awk 'NR==1, NR==5 {print $1, $4} text1.txt -- Del 1 al 5, columna 1 y 4
+
+-- Si el archivo esta todo separado por ";" por ejemplo y no con espacios 
+
+awk -F ";" '{print $1}' c-text1.txt
+
+-- Si quiero unicamente los de usa y italianos
+awk '/usa|ita/ {print}' text1.txt
+
+-- Solo busque en la columna 2 
+awk '2$~/i/ {print}' text1.txt
+
+-- Length de la primera columna
+awk'{print length($1)}' text1.txt
+
+Sudo: Es como el super usuario
+
+sudo nano Ztext.txt -- Deja lo que necesites, como si fuera admin
+
+sudo bash
