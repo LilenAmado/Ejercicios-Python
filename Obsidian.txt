@@ -81,3 +81,38 @@ Sudo: Es como el super usuario
 sudo nano Ztext.txt -- Deja lo que necesites, como si fuera admin
 
 sudo bash
+
+
+Sudo: Cambiar el usuario de algun archivo
+
+sudo chown Macbook dish.txt
+
+Chgrp: Cambiar el grupo de un archivo
+
+sudo chgrp _guest dish.txt
+
+Chmod: Cambiar permisos de un archivo
+
+chmod u=wrx file.txt
+chmod o=w file.txt
+chmod +x file.txt (agregar lo que faltaria, ejemplo si tiene w y r agregar el x) o -x
+
+
+Sudo - Cambiar el Owner/Dueño de las carpetas
+
+sudo chown -R MacBook closet/
+
+Variables
+
+variable=573
+echo "$variable"
+echo "Mi variable es $variable" 
+echo "$variable $otravariable" 
+echo ${var}
+unset g
+echo $var
+
+Existentes:
+echo $USER
+echo $HOME
+echo $PATH
