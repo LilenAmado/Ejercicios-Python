@@ -1,1 +1,131 @@
+# Comentario
+
+Concatenar
+"Hola"+ " " + "Mundo"
+
+Operadores Aritméticos
+
+Suma
+5+5
+
+Resta
+5-5
+
+Multiplicación
+5*5
+
+División
+12.5 / 4
+5/0 >> Error dividir por 0.
+
+División Entera
+15 // 5
+
+Exponente
+5**3
+
+Módulo: Retorna el resto de la división. Por ejemplo saber si es par o impar un número
+
+5 % 2
+
+ORDEN: PEMDAS
+Parentesis
+Exponencial
+Multiplicación
+División
+Asuma
+Sresta
+
+Operadores logicos
+TRUE or FALSE
+
+NOT AND OR  
+
+Operadores relacionales
+>
+<
+<=
+>=
+!=
+==
+
+Operadores de asignación
+= 
++=
+-=
+*=
+/=
+**=
+//=
+%=
+
+Sentencias condicionales
+
+temp = 15
+
+if temp <= 0:
+	print("Muy frio)
+elif temp < 25:
+	print("Frio")
+else: 
+	print("Calor")
+
+Lista:
+Estructura de datos utilizada para almacenar múltiples valores en secuencia. 
+
+- Secuencia ordenada de valores
+- Puede contener valores de cualquier tipo
+- Puede contener valores de distintos tipos
+- Cada posición en la lista está asociada a un entero llamado "indice"
+- Es mutable, puede ser modificada
+
+[1, 2, 3, 4]
+["a", "b", "c"]
+
+lista = [2,"a",4,[32,332,23,44]]
+
+print(lista[3][2]) # 23
+
+Append/Insert: Agregar un elemento. 
+
+1) Al final de la lista: 
+
+<variable de lista>.append(<elemento>)
+
+nums = [1, 2, 3, 4]
+nums.append(5)
+
+2) En un índice especifico:
+
+<variable de lista>.insert(<indice>, <elemento>)
+
+nums.insert(0, 6)
+
+Remove: Eliminar un elemento.
+
+<variable de lista>.remove(<elemento>)
+
+a = [1, 2, 3, 4, 5, 4]
+a.remove(4)
+
+Resultado: [1, 2, 3, 5, 4]
+
+Si queres remover algun número que no existe, ej 9, da error. 
+
+IN: Encontrar un elemento
+
+<elemento> in <variable lista>
+
+vocales = ["a", "e", "i", "o", "u"]
+
+"a" in vocales #true
+"z" in vocales #false
+
+.index(<elemento>): Retorna el indice del primer elemento en la lista. Si no se encuentra el elemento ocurre un error. 
+
+<lista>.index(<elemento>)
+
+vocales = ["a", "e", "i", "o", "u"]
+vocales.index("i") # 2
+vocales.index("z") # Error
 
