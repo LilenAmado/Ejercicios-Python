@@ -129,3 +129,69 @@ vocales = ["a", "e", "i", "o", "u"]
 vocales.index("i") # 2
 vocales.index("z") # Error
 
+_______________________________________________________________________
+
+Cambiar un elemento en una lista
+
+<lista>[<indice>] = <nuevo valor> 
+
+num = [1,2,3,4]
+num [0] = 8 # [8,2,3,4]
+
+Métodos de la listas
+
+<lista>.<metodo>(<parámetros>)
+
+> Count: Cuenta cuantas veces se repite un elemento en una lista
+.count(<elemento>) 
+ 
+> Extend: Extiende la lista agregandole elementos de otra lista
+.extend(<lista>)
+a.extend([8 , 9, 10])
+
+> POP: elimina el ultimo elemento y lo muestra 
+.pop()
+
+> Reverse: Da vuelta el orden actual de la lista
+.reverse()
+
+> Sort: Ordena la lista en asc o desc
+.sort()
+
+Tuplas
+
+Estructura de datos inmutable con una secuencia inmutable
+
+(1, 2, 3, 4)
+[0] [1]... 
+
+Características: 
+
+- Secuencia ordenada de valores
+- Puede contener valores de cualquier tipo de datos
+
+- Puede contenervalores de distinto tipos de datos
+
+- Cada posición de la tupla se identifica con un índice
+
+- Es inmutable. No puede ser modificada. 
+
+Acceder un elemento
+
+tupla = ("A", "B", "C")
+
+tupla[0] # A
+
+Encontrar un elemento 
+
+<elemento> in <tupla>
+"A" in tupla
+
+Encontrar el índice de un elemento en la tupla
+
+<tupla>.index(<elemento>)
+
+Contar cuantas veces aparece un elemento en la tupla 
+
+num = (2, 3, 5, 5)
+num.count(5) # 2
