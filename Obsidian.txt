@@ -244,3 +244,8 @@ elemento in diccionario
 
 "Gino" in edades #true
 
+### Estructura de control - Ciclos repetitivos
+
+#### For
+> Estructura de control que permite ejecutar una o varias líneas de código mútiples veces. 
+> Lo usamos cuando sabemos con antelación cuantas veces debemos repetir ciertas instrucciones.
