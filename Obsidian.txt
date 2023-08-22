@@ -195,3 +195,52 @@ Contar cuantas veces aparece un elemento en la tupla
 
 num = (2, 3, 5, 5)
 num.count(5) # 2
+
+
+
+
+____________________________________________________
+
+Documentación: https://docs.python.org/es/3/
+
+Diccionarios: 
+
+> Colección de pares clave - Valor
+> Claves únicas e inmutables
+> Valores asociados pueden ser de cualquier tipo
+> La clave se usa para acceder al valor asociado
+> Los pares clave-valor pueden ser modificadosm añadidos y eliminados
+> Mutables
+
+{Clave: Valor}
+
+{"A": 45, "B": 30}
+
+### Acceder a un valor
+
+diccionario[clave]
+
+edades = {"Gino": 15, "Nora": 45}
+
+edades["Gino"] #15
+edades.get("Gino") #15
+
+### Añadir o modificar
+
+diccionario[clave] = el_nuevo_valor
+
+edades["Talina"] = 67
+
+### Eliminar
+
+del diccionario[clave]
+
+del edades["Gino"]
+
+### Revisar si existe 
+
+elemento in diccionario 
+(La clave)
+
+"Gino" in edades #true
+
