@@ -249,3 +249,78 @@ elemento in diccionario
 #### For
 > Estructura de control que permite ejecutar una o varias líneas de código mútiples veces. 
 > Lo usamos cuando sabemos con antelación cuantas veces debemos repetir ciertas instrucciones.
+
+
+___________________________________
+
+for variable in range(inicio, fin):
+	#Código
+
+> - Variable de control que puede ser utilizada en el código que se va a repetir
+> - Se actualiza automáticamente antes de cada iteración
+> - Debe tener un nombre descriptivo.
+> - Se pueden iterar: Cadena de caracteres, listas, tuplas, diccinarios, etc.
+
+for variable in iterable: 
+	#Código
+
+[img wpp]
+
+Ejemplos: 
+
+Listas:
+
+for num in [1, 2, 3]:
+	print(num)
+
+Tuplas:
+
+for num in (1,2,3):
+	print(num)
+
+Diccionario:
+
+letras = {"a": 1, "b": 2}
+
+for clave in letras:
+	print(clave)
+
+for valor in letra.values():
+	print(valor)
+
+for clave,valor in letras.items():
+	print(clave, valor)
+
+Rango:
+
+for i in range(4):
+	print(i)
+
+# Resultado
+# 0 1 2 3 
+
+
+
+#### range(): secuencia de enteros
+      fin
+range(4) >> 0, 1, 2, 3
+     fin-1
+
+range(start, stop[, step]
+
+start: El valor del parámetro start (0 si no se utiliza el parámetro)
+
+stop: El valor del parámetro stop
+
+step: El valor del parámetro step (1 si no se utiliza el parámetro) (uno en uno salta)
+
+## Ciclo While
+
+> - Ciclo que continúa mientras una condición es verdadera y se detiene cuando es falsa.
+> - No tiene un número fijo o predeterminado de iteraciones.
+> - Se ejecuta hasta que lacondición sea falsa.
+> - Los ciclos while no actualizan las variables de control automáticamente. Deben ser actualizadas en el cuerpo del ciclo.
+
+while condición:
+	#Código
+
