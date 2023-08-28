@@ -324,3 +324,149 @@ step: El valor del parámetro step (1 si no se utiliza el parámetro) (uno en un
 while condición:
 	#Código
 
+x = 20
+
+while x < 35:
+	print(x)
+	x += 3
+
+## Funciones
+
+> - Bloque de código reutilizable que realiza una sola tarea específica
+> - Ventajas: Reusable - Consiso - Leíble  - Mantenible  - Comprobable
+> Puede contener Parámetros: Variable que se incluye en la definición de la función para representar y guardar un valor que podemos pasar cuando llamemos a la función.
+> - Argumento: Valor que asignamos a un parámetro cuando llamamos a una función.
+> - Return: retornar un valor luego de complear la tarea. Cuando se ejecuta return, la ejecución de la función se detiene inmediatamente. Si no hay return, se retorna "none".
+> Scope: Alcance que tendra la variable en el programa. Determina a que variables se tiene acceso en cada parte del programa. 
+Variables: 
+	Global: Variables que se definieron a alcance de todo el programa. Se puede utilizar en cualquier momento del programa.
+	Local: Variables que se definieron en una función y solo se pueden utilizar en esa función.
+
+def función(): 
+	#Código
+
+def función(parámetro):
+	#Código
+
+def función(parámetro_1, parámetro_2):
+	#Código
+
+def función(parámetro):
+	#Código
+	return valor
+
+Ejemplo: 
+
+def mostrar_mensaje():
+	print("Hola")
+
+def mostrar_doble(num):
+	print(num * 2)
+
+def sumar(x, y):
+	print(x + y)
+
+def sumar(x, y):
+	return(x + y)
+
+## Recursión: Definir algo en términos de sí mismo. 
+
+https://www.youtube.com/watch?v=DLikpfc64cA&t=12928s
+3:30:10
+
+Caso base
+Caso recursivo
+
+def factorial(n):
+	if n== 0 or n==1:
+		return 1
+	else:
+		return n * factorial(n-1)
+
+## Trabajar con Archivos
+
+> Sentencia WITH: Permite abrir un achivo y luego cerrarlo automaticamente.
+
+Modos de apertura de archivos:
+- r (read - leer)
+- w (write - escribir)
+- a (append - añadir)
+- Agregar un + incliye leer. Por ejemplo, w+ es leer y escribir. 
+
+### Leer archivo
+
+with open("nombre_archvo.txt", "r") as archivo: 
+	#Trabajar con el archivo
+
+with open("frases_famosas.txt", "r") as archivo:
+	for linea in archivo:
+		print("==Frase==")
+		print(linea)
+
+### Modificar archivo
+
+#### Reemplazar contenido
+
+notas = {
+	"Nora": 87,
+	"Gino": 100,
+	"Loretto": 67 
+}
+
+with open("data_estudiantes.txt", 'w') as archivo: 
+	for nombre, nota in notas.items():
+		archivo.write(nombre + "-" + str(nota) + "\n")
+
+
+#### Añadir contenido
+
+notas = {
+	"Karen": 7,
+	"Juliana": 30,
+	"Camila": 74 
+}
+
+with open("data_estudiantes.txt", 'a') as archivo: 
+	for nombre, nota in notas.items():
+		archivo.write(nombre + "-" + str(nota) + "\n")
+
+## Importaciones
+
+import módulo
+
+modulo.funcion(argumento)
+
+modulo.constante
+
+import modulo as nombre_alternativo_que_quiero
+
+from modulo import elemento
+from math import pow
+
+No recomendado:
+from modulo import *
+
+Ejemplo: 
+
+import math
+
+math.pow(9, 2)
+
+math.pi
+
+## Excepciones
+
+try: 
+	# Intenta ejecutar este código
+except: 
+	# Si ocurre una excepción, se detiene e inmediatamente ejecuta este código
+
+num1 = int(input("Ingresar num: "))
+num2 = int(input("Ingresar num: "))
+
+try: 
+	resultado = num1 / num2
+	print(num1)
+except:
+	print("Alerta error")
+
