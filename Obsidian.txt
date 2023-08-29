@@ -470,3 +470,107 @@ try:
 except:
 	print("Alerta error")
 
+_______________________________________________________________________________________________________
+
+
+try:
+	-- Código
+except tipo_de_excepción:
+	-- Código
+
+
+try: 
+	resultado = num1 / num2
+	print(resultado)
+except ZeroDivisionError:
+	print("No se puede dividir")
+
+
+try:
+	-- Código
+except tipo_de_excepción as var:
+	-- Código
+
+try: 
+	resultado = num1 / num2
+	print(resultado)
+except ZeroDivisionError as e:
+	print(e)
+
+try:
+	-- Código
+except tipo_de_excepción as var:
+	-- Código
+else:
+	-- Código 
+
+try: 
+	resultado = num1 / num2
+	print(resultado)
+except ZeroDivisionError as e:
+	print(e)
+else: 
+	print("Else")
+
+try:
+	-- Código
+except tipo_de_excepción as var:
+	-- Código
+finally:
+	-- Código 
+
+try: 
+	resultado = num1 / num2
+	print(resultado)
+except ZeroDivisionError as e:
+	print(e)
+else: 
+	print("Else")
+finally:
+	print("Ejecuta si hubo un error o no")
+
+
+## POO: Proramación Orientada a Objetos
+
+Clases: Atributos - Metodos (funcionalidad)
+
+Ej: 
+
+Cuenta bancaria: 
+	
+	Atributos: 
+		- Número de Cuenta
+		- Nombre del Titular
+		- Balance Inicial
+		- Balance Actual
+		- Fecha de Apertura
+		- ...
+
+	class CuentaBancaria:
+		-- Atributos:
+		-- Funcion de inicialización
+		def __init__(self, num_cuenta, nombre_titular, balance):
+			self.num_cuenta = num_cuenta
+			self.nombre_titular = nombre_titular
+			self.balance = balance
+	
+		-- Métodos:
+		def generar_balance(self):
+			print(self.balance)
+	
+		def depositar(self, monto):
+			if monto > 0:
+				self.balance += monto	
+		
+
+-- Crear una instancia:
+
+mi_cuenta = CuentaBancaria("105-213-433", "Nora Smith", 3000)
+
+print(mi_cuenta.balance)
+
+mi_cuenta.generar_balance() -- 3000
+
+mi_cuenta.depositar(400) 
+
+mi_cuenta.generar_balance() --- 3400
