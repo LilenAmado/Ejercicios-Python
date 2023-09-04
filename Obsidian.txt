@@ -574,3 +574,32 @@ mi_cuenta.generar_balance() -- 3000
 mi_cuenta.depositar(400) 
 
 mi_cuenta.generar_balance() --- 3400
+
+
+
+
+
+
+
+
+
+
+_________________________________________________
+_______________________________________________
+____________________________________________
+
+Dataframe: Como tabla
+
+Serie: Lista de datos unidimensional organizado a traves de un indice
+
+nombre_dataframe['nombre_serie']
+nombre_dataframe["nombre_serie"]
+nombre_dataframe.nombre_serie
+nombre_dataframe[['nombre_serie1', 'nombre_serie2']]
+
+tabla['Nombre'] // (tira columna de nombre)
+
+tabla.Edad // (tira columna de edad)
+
+tabla[['Nombre','Edad']]
+
