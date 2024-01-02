@@ -1,0 +1,98 @@
+• Estadistica descriptiva
+
+Mas fácil analizar todo junto (por grupos) que dato por dato. 
+
+Estadísticos: Conjunto de datos a través de números individuales. 
+
+• Medidas de tendencia centras: Media, mediana y moda. Sirve para representar el centro de mi conjunto de datos. 
+
+• Medidas de dispersión: Varianza y Desviación estandar. Ayuda a determinar que tan dispersos estan los datos entre sí. Mientras más alto el número de desviación estandar, más dispersos estan. 
+
+Desviación estandar: 
+1) Promedio: Sumar todos los datos / la cantidad de datos. 
+2) Cada valor restarle el promedio total sacado anteriormente. 
+3) A esos resultados (a cada uno) elevarlo a la 2. 
+4) Sumar cada uno de esos resultados.
+5) La cantidad de datos - 1 
+6) Punto 4 dividido punto 5. 
+7) Raíz cuadrada del resultado del punto 6. 
+
+• Medidas de Posición: Percentiles. Como estan distribuido mis datos a lo largo de un rango.
+Percentiles: Dividen mis datos en 100 grupos. 
+Cuartiles: Dividen mis datos en 4 grupos (ejemplo).
+Deciles: Dividen mis datos en 10 grupos.   
+
+• Aleatoriedad 
+
+• Probabilidad: Número decimal entre 0 y 1. Indica que tan probable es que suceda un evento dentro de un proceso aleatorio. Ejemplo: Tirar una moneda, cara o seca (50 % y 50%). 
+
+• Muestra: Tomar una muestra. Tomar un subconjunto de datos del conjunto de datos de manera aleatoria.
+
+• Correlación: Dos variables de mi conjunto de datos que parecieran estar "atadas". Si una aumenta, la otra también. Ej: Como en las hojas del illustrator. 
+Se puede medir el coheficiente de correlación, los valores varian entre 1 y -1. Ambos correlación positiva o negativa perfecta y el entre medio, valores cercanos a 0 quiere decir que esas dos variables que estoy comparando no estan relacionadas de ningún modo. 
+
+Ejemplo: 
+
+Edades de 11 estudiantes: 
+
+20 - 22 - 22 - 23 - 23 - 24 - 28 - 28 - 28 - 32 - 45
+
+• Media: 26.82
+(20 + 22 + 22 + 23 + 23 + 24 + 28 + 28 + 28 + 32 + 45) / 11 = 26.82
+
+• Mediana: 24
+Cual es la que esta justo en el medio de todas las edades si es que las ordenas. 
+
+• Moda: 28
+Cual es la edad que se repite más.
+
+• Desviación estandar: 7.01
+
+1) 26.82
+
+2) 20 - 26.82 = -6,82
+   22 - 26.82 = -4,82
+   23 - 26.82 = -3,82
+   24 - 26.82 = -2,82
+   28 - 26.82 = 1,18
+   32 - 26.82 = 5,18
+   45 - 26.82 = 18,18
+
+3) -6,82² = 46,5124
+   -4,82² = 23,2324
+   -3,82² = 14,5924
+   -2,82² = 7,9524
+    1,18² = 1,3924
+    5,18² = 26,8324
+    18,18² = 330,5124
+
+4) Rta: 491,6364
+46,5124 + 23,2324 + 23,2324 + 14,5924 + 14,5924 + 7,9524 + 1,3924 + 1,3924 + 1,3924 + 26,8324 + 330,5124 = 491,6364
+
+5) 11 - 1 = 10 
+
+6) ( 491,6364 / 10 ) = 49,16364
+
+7) √49,16364 = 7,011
+
+• Percentiles: Ordeno por ejemplo 4 grupos que tengan la misma cantidad de estudiantes
+
+20 - 22 - 22 
+23 - 23 - 24 
+28 - 28 - 28 
+32 - 45 - 45 (se agregó este último) 
+
+
+
+20 - 22 - 22  ( 25% )
+23 - 23 - 24  ( 25% )
+28 - 28 - 28  ( 25% )
+32 - 45 - 45  ( 25% )
+
+20 - 22 - 22  ( 25% ) Cuartil 1
+23 - 23 - 24  ( 50% ) Cuartil 2 
+28 - 28 - 28  ( 75% ) Cuartil 3
+32 - 45 - 45 
+
+Con esto puedo concluir, por ejemplo, que rango tiene el 50% de los estudiantes. Tomando el último valor del cuartil 1 y el último del cuartil 3 (23 - 28).
+
